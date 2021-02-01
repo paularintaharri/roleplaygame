@@ -42,7 +42,7 @@ An application can be installed §by cloning the repository.
 
 ![warrior remove item](https://github.com/paularintaharri/roleplaygame/blob/master/images/6warrior_remove_item.png)
 
-**Warrior attacking with Melee Weapon**
+**Heroes attacking**
 
 ![warrior attack](https://github.com/paularintaharri/roleplaygame/blob/master/images/7warrior_attack.png)
 
