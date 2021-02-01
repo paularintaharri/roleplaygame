@@ -14,7 +14,7 @@ public class ArmorFactory {
         }
         if(armorType == ArmorType.Cloth) {
             return new Cloth(name, level, slotType);
-        } else {
+        }else {
             return null;
         }
     }

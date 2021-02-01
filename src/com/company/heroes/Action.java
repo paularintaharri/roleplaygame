@@ -47,16 +47,21 @@ public class Action {
         } else {
             slotBonus = 0.6;
         }
+        hero.setItemBonusHealth((int) Math.floor(armor.getBaseBonusHealth() * slotBonus));
+        hero.setItemBonusStrength((int) Math.floor(armor.getBaseBonusStrength() * slotBonus));
+        hero.setItemBonusDexterity((int) Math.floor(armor.getBaseBonusDexterity() * slotBonus));
+        hero.setItemBonusIntelligence((int) Math.floor(armor.getBaseBonusIntelligence() * slotBonus));
+
         if (add) { //add armor stats
-            hero.setBaseHealth(hero.getBaseHealth() + (int) Math.floor(armor.getBaseBonusHealth() * slotBonus));
-            hero.setBaseStrength(hero.getBaseStrength() + (int) Math.floor(armor.getBaseBonusStrength() * slotBonus));
-            hero.setBaseDexterity(hero.getBaseDexterity() + (int) Math.floor(armor.getBaseBonusDexterity() * slotBonus));
-            hero.setBaseIntelligence(hero.getBaseIntelligence() + (int) Math.floor(armor.getBaseBonusIntelligence() * slotBonus));
+            hero.setBaseHealth(hero.getBaseHealth() + hero.getItemBonusHealth());
+            hero.setBaseStrength(hero.getBaseStrength() + hero.getItemBonusStrength());
+            hero.setBaseDexterity(hero.getBaseDexterity() + hero.getItemBonusDexterity() );
+            hero.setBaseIntelligence(hero.getBaseIntelligence() + hero.getItemBonusIntelligence());
         }else { //remove armor stats
-            hero.setBaseHealth(hero.getBaseHealth() - (int) Math.floor(armor.getBaseBonusHealth() * slotBonus));
-            hero.setBaseStrength(hero.getBaseStrength() - (int) Math.floor(armor.getBaseBonusStrength() * slotBonus));
-            hero.setBaseDexterity(hero.getBaseDexterity() - (int) Math.floor(armor.getBaseBonusDexterity() * slotBonus));
-            hero.setBaseIntelligence(hero.getBaseIntelligence() - (int) Math.floor(armor.getBaseBonusIntelligence() * slotBonus));
+            hero.setBaseHealth(hero.getBaseHealth() - hero.getItemBonusHealth());
+            hero.setBaseStrength(hero.getBaseStrength() - hero.getItemBonusStrength());
+            hero.setBaseDexterity(hero.getBaseDexterity() - hero.getItemBonusDexterity());
+            hero.setBaseIntelligence(hero.getBaseIntelligence() - hero.getItemBonusIntelligence());
         }
     }
 
@@ -71,7 +76,7 @@ public class Action {
         }
     }
 
-    // damage when attacking
+    //damage when attacking
     public void attack(Hero hero, Weapon weapon) {
         if (!hero.equippedWeapon.isEmpty()) {
             int damage = 0;
@@ -82,7 +87,7 @@ public class Action {
             } else if (weapon.getWeaponType() == WeaponType.Magic) {
                 damage = (int) Math.floor(weapon.getBaseDamage() + (hero.getBaseIntelligence() * weapon.getDamageIncrease()));
             }
-            System.out.println("Attacking for " + damage);
+            System.out.println(hero.getHeroName() + " is attacking for " + damage + " damage");
         } else {
             System.out.println("No weapons equipped");
         }

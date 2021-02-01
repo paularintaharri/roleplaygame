@@ -3,6 +3,7 @@ package com.company.factories;
 import com.company.heroes.*;
 
 public class HeroFactory {
+
     public Hero getHero(String name, HeroType heroType) {
         if(heroType == HeroType.Mage) {
             return new Mage(name);

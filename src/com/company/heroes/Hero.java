@@ -54,6 +54,11 @@ public abstract class Hero {
     public int getBaseStrength() {return baseStrength;}
     public int getBaseDexterity() {return baseDexterity; }
     public int getBaseIntelligence() {return baseIntelligence; }
+    public int getItemBonusHealth() { return itemBonusHealth; }
+    public int getItemBonusStrength() { return itemBonusStrength; }
+    public int getItemBonusDexterity() { return itemBonusDexterity; }
+    public int getItemBonusIntelligence() { return itemBonusIntelligence; }
+
     public String getHeroName() {return heroName; }
     public HashMap<SlotType,Armor> getArmorHasMap(){ return equippedArmor; }
     public HashMap<SlotType,Weapon> getWeaponHasMap(){ return equippedWeapon; }
@@ -62,6 +67,10 @@ public abstract class Hero {
     public void setBaseStrength(int newBaseStrength) {this.baseStrength = newBaseStrength; }
     public void setBaseDexterity(int newBaseDexterity) {this.baseDexterity = newBaseDexterity; }
     public void setBaseIntelligence(int newBaseIntelligence) {this.baseIntelligence = newBaseIntelligence; }
+    public void setItemBonusHealth(int itemBonusHealth) { this.itemBonusHealth = itemBonusHealth; }
+    public void setItemBonusStrength(int itemBonusStrength) { this.itemBonusStrength = itemBonusStrength; }
+    public void setItemBonusDexterity(int itemBonusDexterity) { this.itemBonusDexterity = itemBonusDexterity; }
+    public void setItemBonusIntelligence(int itemBonusIntelligence) { this.itemBonusIntelligence = itemBonusIntelligence; }
 
     public int getLevel() {return level; }
     public void setLevel(int level) {this.level = level; }
@@ -126,7 +135,7 @@ public abstract class Hero {
                 System.out.println(entry.getValue());
             });
         }else {
-            System.out.println("No armors equipped");
+            System.out.println("No armors equipped\n");
         }
     }
 
