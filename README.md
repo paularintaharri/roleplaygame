@@ -8,10 +8,9 @@ A simple role play game application to create characters and various items.
 
 **Armor types:** Cloth, Leather, Plate
 
-Hero can equip armors to three different slots (body, head or legs). Depending of a slot and item stats, heroes health, strength, dexterity or/and  intelligence will grow. 
+Hero can equip armors to three different slots (body, head or legs). Depending on a slot and item stats, heroes health, strength, dexterity or/and intelligence will grow.
 
-Hero can attack with weapon equipped. Weapons have a base damage which is incrased by dexteroty for ranged weapon, strength for melee weapon and intelligence for magic weapon. 
-
+Hero can attack with a weapon equipped. Weapons have a base damage which is increased by dexterity for ranged weapon, strength for melee weapon and intelligence for magic weapon.
 
 ## Installation
 An application can be installed §by cloning the repository. 
